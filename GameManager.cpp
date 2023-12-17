@@ -37,3 +37,12 @@ void GameManager::run() {
         }
     }
 }
+
+//in the menu every time we declare a new GameManager boardPtr and array of player pointers are dangling pointers
+// aka memory leak
+GameManager::~GameManager()
+{
+    delete boardPtr;
+    delete players[0];
+    delete players[1];
+}

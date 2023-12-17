@@ -55,6 +55,7 @@ public:
     bool is_winner();
     bool is_draw();
     bool game_is_over();
+    ~X_O_Board() {};
 };
 
 class _5x5_TicTacToe_Board : public Board
@@ -72,6 +73,7 @@ public:
     bool is_winner();
     bool is_draw();
     bool game_is_over();
+    ~_5x5_TicTacToe_Board() {};
 };
 
 class Four_in_a_row : public Board
@@ -85,6 +87,18 @@ public:
     bool is_draw();
     bool game_is_over();
     ~Four_in_a_row();
+};
+
+class PyramicTicTacToe : public Board
+{
+public:
+    PyramicTicTacToe();
+    bool update_board(int x, int y, char symbol);
+    void display_board();
+    bool is_winner();
+    bool is_draw();
+    bool game_is_over();
+    ~PyramicTicTacToe(){};
 };
 
 ///////////////////////////////////////////
@@ -111,6 +125,7 @@ public:
     string to_string();
     // Get symbol used by player
     char get_symbol();
+    ~Player() = default;
 };
 
 ///////////////////////////////////////////
@@ -127,6 +142,7 @@ public:
     RandomPlayer(char symbol, int dimension);
     // Generate a random move
     void get_move(int &x, int &y);
+    ~RandomPlayer() = default;
 };
 
 ///////////////////////////////////////////
@@ -138,6 +154,11 @@ private:
 
 public:
     GameManager(Board *, Player *playerPtr[2]);
+    void setGame(Board* game)
+    {
+        delete boardPtr;
+        boardPtr = game;
+    };
     void run();
     // This method creates board and players
     // It displays board
@@ -147,6 +168,7 @@ public:
     //      It updates board and displays otit
     //      If winner, declare so and end
     //      If draw, declare so and end
+    ~GameManager();
 };
 
 #endif
