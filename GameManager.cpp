@@ -24,7 +24,7 @@ void GameManager::run() {
             }
             boardPtr->display_board();
             if (boardPtr->is_winner()){
-                if(boardPtr->winner == players[i]->get_symbol())
+                if(toupper(boardPtr->winner) == players[i]->get_symbol())
                     cout  << players[i]->to_string() << " wins\n";
                 else
                     cout  << players[!i]->to_string() << " wins\n";

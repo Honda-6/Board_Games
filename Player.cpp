@@ -25,9 +25,7 @@ Player::Player (int order, char symbol) {
 // Get desired move: x y (each between 0 and 2)
 // Virtual (can change for other player types)
 void Player::get_move (int& x, int& y) {
-    cout << "\nPlease enter your move x and y (0 to ";
-    cout << "2456"[1];
-    cout << ") separated by spaces: ";
+    cout << "\nPlease enter your move x and y: ";
     cin >> x >> y;
 }
 
