@@ -96,7 +96,7 @@ bool _5x5_TicTacToe_Board::check_diagonal_right(char base, short r, short c, sho
 
 bool _5x5_TicTacToe_Board::is_winner()
 {
-    if (n_moves < 24)
+    if (n_moves < 25)
         return false;
     short counter{};
     for (int i{2}; i < n_rows - 2; ++i)
@@ -155,9 +155,9 @@ bool _5x5_TicTacToe_Board::is_winner()
 }
 bool _5x5_TicTacToe_Board::is_draw()
 {
-    return n_moves >= 24 && _3Xs == _3Os;
+    return n_moves >= 25 && _3Xs == _3Os;
 }
 bool _5x5_TicTacToe_Board::game_is_over()
 {
-    return n_moves >= 24;
+    return n_moves >= 25;
 }

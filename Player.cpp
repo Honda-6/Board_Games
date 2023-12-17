@@ -19,7 +19,7 @@ Player::Player (int order, char symbol) {
     cout << "Welcome player " << order << endl;
     cout << "Please enter your name: ";
     cin >> name;
-    this->symbol = symbol;
+    this->symbol = toupper(symbol);
 }
 
 // Get desired move: x y (each between 0 and 2)
