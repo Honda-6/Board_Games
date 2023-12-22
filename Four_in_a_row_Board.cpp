@@ -110,7 +110,8 @@ bool Four_in_a_row::is_winner()
             }
             if (x_counter == 4 || o_counter == 4)
             {   
-                winner = tolower(board[i][j]);
+                //winner = tolower(board[i][j]);
+                winner = board[j][i];
                 return true;
             }
         }
